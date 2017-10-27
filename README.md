@@ -15,6 +15,12 @@ Examples:
    * [cells](/examples/7guis/cells.js)
 * [multiple dynamic counters](/examples/counter-many.js)
 
+## start an example
+
+```
+npx budo examples/7guis/counter.js --live --open -- -dv
+```
+
 ## state(defaults)
 
 This is exported in `./index.js`.

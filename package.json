@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "browserify": {
+    "transform": [
+      "es2040"
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "bel": "5.1.3"
+    "bel": "5.1.3",
+    "budo": "^10.0.4",
+    "es2040": "^1.2.6"
   }
 }
