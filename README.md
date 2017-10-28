@@ -76,7 +76,7 @@ The `dom` module also provides a `childSync` function that allows you to create 
 
 Unlike with virtual dom libraries, the view functions only get called once on pageload. Instead of diffing and patching entire trees, we listen to changes on state properties and make changes to dom elements directly using the browser's built-in HTMLElement and DOM Node API
 
-```
+```js
 const html = require('bel')
 const state = require('../index')
 
