@@ -3,6 +3,10 @@ var html = require('bel')
 var exp = module.exports = {}
 
 exp.childSync = function childSync (view, container, state, prop) {
+  container = typeof container === 'string' ?
+    document.createElement(container) :
+    container
+
   var inserted = {}
   state.on(prop, function () { update() })
 

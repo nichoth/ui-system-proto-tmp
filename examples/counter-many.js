@@ -10,7 +10,7 @@ function Counter (initial, id) {
 var counterActions = {
   increment: function (c) {
     c.update({count: c.count + 1})
-  }, 
+  },
   decrement: function (c) {
     if (c.count > 0) {
       c.update({count: c.count - 1})
@@ -39,7 +39,8 @@ var counterListActions = {
 function listView (counterList) {
   const appendFn = ev => counterListActions.append(0, counterList)
   const appendBtn = html`<button onclick=${appendFn}> Add bean bag </button>`
-  const counterElems = dom.childSync(counterViewWithRemove(counterList), 'div', counterList, 'counters')
+  const counterElems = dom.childSync(counterViewWithRemove(counterList),
+    'div', counterList, 'counters')
 
   return html`
     <div>
