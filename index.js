@@ -1,3 +1,4 @@
+const window = require('global/window')
 const EventEmitter = require('events')
 
 module.exports = createState

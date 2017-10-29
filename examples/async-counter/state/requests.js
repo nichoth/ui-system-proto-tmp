@@ -1,23 +1,4 @@
-const state = require('../../')
-
-function Counter () {
-  return state({
-    count: 0,
-    requests: Request()
-  })
-}
-
-Counter.inc = state => () => state.update({ count: state.count + 1 })
-Counter.dec = state => () => state.update({ count: state.count - 1 })
-
-Counter.asyncInc = state => ev => {
-  var req = { type: 'inc', id: getId() }
-  Request.start(state.requests)(req)
-  setTimeout(() => {
-    Request.resolve(state.requests)(req)
-    Counter.inc(state)()
-  }, 1000)
-}
+var state = require('../../../')
 
 function Request () {
   return state({
@@ -49,16 +30,11 @@ Request.error = state => (req, err) => {
   })
 }
 
-var _id = 0
-function getId () {
-  return _id++
-}
-
 function without (fn, list) {
   var i = list.findIndex(el => fn(el))
   list.splice(i, 1)
   return list
 }
 
-module.exports = Counter
+module.exports = Request
 
